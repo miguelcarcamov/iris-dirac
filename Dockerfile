@@ -34,7 +34,7 @@ RUN export VERSION=1.13.1 OS=linux ARCH=amd64 && \
     source /etc/profile
 
 # Download Singularity
-RUN export VERSION=3.2.0 && \
+RUN export VERSION=3.5.3 && \
     wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
     tar -xzf singularity-${VERSION}.tar.gz
 # Install Singularity
@@ -49,7 +49,7 @@ RUN mkdir /usr/local/gridpp-dirac && \
     cd /usr/local/gridpp-dirac && \
     wget -np -O dirac-install https://raw.githubusercontent.com/DIRACGrid/DIRAC/integration/Core/scripts/dirac-install.py && \
     chmod +x dirac-install && \
-    ./dirac-install -r v6r21p7 -i 27 -g v14r1 && \ 
+    ./dirac-install -r v6r22p6 -i 27 -g v14r1 && \ 
     source ./bashrc 
 RUN echo "alias setup-grid='source /usr/local/gridpp-dirac/bashrc'" > /etc/profile.d/gridpp-dirac.sh
 
